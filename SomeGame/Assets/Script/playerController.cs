@@ -8,6 +8,7 @@ public class playerController : MonoBehaviour {
     public float Speed = 1000f;
     public float Rotate = 100f;
     public float Jump;
+    public bool jumpBool = false;
     
     // Use this for initialization
 	void Start () {
@@ -32,9 +33,21 @@ public class playerController : MonoBehaviour {
         {
             transform.Rotate(Vector3.up * Rotate * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.Space))
+        if (jumpBool)
         {
-            rb.AddForce(Vector3.up * Jump * Time.deltaTime);
+            if (Input.GetKey(KeyCode.Space))
+            {
+                rb.AddForce(Vector3.up * Jump * Time.deltaTime);
+                jumpBool = false;
+            }
         }
 	}
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            jumpBool = true;
+        }
+    }
 }
+

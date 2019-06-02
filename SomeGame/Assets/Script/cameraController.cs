@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class cameraController : MonoBehaviour {
 
-    Vector3 PositionOffset;
-    Vector3 RotationOffset;
+    float offset;
+    public float cameraHeight;
     
     // Use this for initialization
 	void Start () {
-        PositionOffset = Camera.main.transform.position - this.transform.position;
+        offset = 10;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        Camera.main.transform.position = this.transform.position + PositionOffset;
+        Camera.main.transform.position = this.transform.position + offset * transform.forward * -1;
+        Camera.main.transform.position += Vector3.up * cameraHeight;
+        Camera.main.transform.LookAt(this.transform);
     }
 }
