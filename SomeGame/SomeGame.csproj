@@ -79,9 +79,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\bulletController.cs" />
     <Compile Include="Assets\Script\cameraController.cs" />
     <Compile Include="Assets\Script\playerController.cs" />
     <Compile Include="Assets\Script\respawnController.cs" />
+    <Compile Include="Assets\Script\shootingController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Free Low Poly Desert Pack\Materials\Shaders\Vertex_Color_Basic.shader" />
