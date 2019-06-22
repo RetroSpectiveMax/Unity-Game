@@ -81,8 +81,10 @@
   <ItemGroup>
     <Compile Include="Assets\Script\bulletController.cs" />
     <Compile Include="Assets\Script\cameraController.cs" />
+    <Compile Include="Assets\Script\enemyAttackController.cs" />
     <Compile Include="Assets\Script\enemyController.cs" />
     <Compile Include="Assets\Script\playerController.cs" />
+    <Compile Include="Assets\Script\radiusDetection.cs" />
     <Compile Include="Assets\Script\respawnController.cs" />
     <Compile Include="Assets\Script\shootingController.cs" />
     <Compile Include="Assets\Script\superBulletController.cs" />
