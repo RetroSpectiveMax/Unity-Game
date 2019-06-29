@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/MaxGame.unity
+- path: Assets/Scenes/MaxGame.unity
   isLoaded: 1
   isActive: 1

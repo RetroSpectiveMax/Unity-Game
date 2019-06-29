@@ -14,14 +14,13 @@ public class shootingController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.F))
         {
             Instantiate(bullet, this.transform.position, Quaternion.Euler(90, this.transform.rotation.eulerAngles.y, 0));
-            Debug.Log(this.transform.rotation.y);
         }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Instantiate(superBullet, this.transform.position + new Vector3(0, 0, 1), Quaternion.Euler(90, this.transform.rotation.eulerAngles.y, 0));
-        }
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+            //Instantiate(superBullet, this.transform.position + new Vector3(0, 0, 1), Quaternion.Euler(90, this.transform.rotation.eulerAngles.y, 0));
+        //}
 	}
 }

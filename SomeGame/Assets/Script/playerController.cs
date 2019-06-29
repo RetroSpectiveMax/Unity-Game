@@ -9,6 +9,7 @@ public class playerController : MonoBehaviour {
     public float Rotate = 100f;
     public float Jump;
     public bool jumpBool = false;
+    public float health = 100f;
     
     // Use this for initialization
 	void Start () {
@@ -41,12 +42,21 @@ public class playerController : MonoBehaviour {
                 jumpBool = false;
             }
         }
+        if(health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
 	}
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Ground")
         {
             jumpBool = true;
+        }
+        if(collision.gameObject.tag == "enemy")
+        {
+            health -= 10;
+            Debug.Log(health);
         }
     }
 }

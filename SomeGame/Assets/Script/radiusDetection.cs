@@ -5,7 +5,7 @@ using UnityEngine;
 public class radiusDetection : MonoBehaviour {
 
     // Use this for initialization
-    public static bool Triggered = false;
+    public bool Triggered = false;
 
 	void Start () {
 		
@@ -15,11 +15,6 @@ public class radiusDetection : MonoBehaviour {
 	void Update () {
 		
 	}
-
-    public static bool getTriggered()
-    {
-        return Triggered;
-    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")

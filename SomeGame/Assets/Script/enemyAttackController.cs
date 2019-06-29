@@ -5,8 +5,10 @@ using UnityEngine;
 public class enemyAttackController : MonoBehaviour {
     
     public Transform player;
+    public radiusDetection rd;
 
-    public float health = 100f;
+    public float health = 50f;
+    public bool playerNoticed = false;
 
 	void Start () {
 
@@ -18,17 +20,18 @@ public class enemyAttackController : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
-        if(radiusDetection.getTriggered() == true)
+        if (rd.Triggered == true)
         {
             transform.LookAt(player);
-            Debug.Log("Noticeed");
+            Debug.Log("Facing the player");
+            playerNoticed = true;
         }
 	}
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "bullet")
         {
-            health -= 10;
+            health -= 2;
         }
     }
 }
